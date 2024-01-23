@@ -7,12 +7,13 @@ project(Test)
 # 设置makefile生成的可执行文件存放路径
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/build)
 
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC)
-
+# aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC)
+file(GLOB SRC ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
-
+# set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+# link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+# link_libraries(Test_lib1)
 # 指定生成目标
 add_executable(Test ${SRC})
 # 添加链接库
